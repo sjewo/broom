@@ -164,7 +164,7 @@ augment.DirichletRegModel <- function(x, data = x$data, newdata=NULL,
         
     } else {
         ret <- fix_data_frame(newdata, newcol = ".rownames")
-        fitdf <- as.data.frame(DirichletReg::predict.DirichletRegModel(x, newdata, mu=what["mu"], alpha=what["alpha"], phi=what["phi"]))
+        fitdf <- as.data.frame(DirichletReg::predict.roxygen2(x, newdata, mu=what["mu"], alpha=what["alpha"], phi=what["phi"]))
         names(fitdf) <- paste0(".fitted.", names(fitdf))
         return(cbind(ret, fitdf))
     }
